@@ -1,0 +1,12 @@
+flowchart TD
+    A[掌机上电] --> B[目标系统的 U-Boot]
+    B --> C[读取 boot.ini]
+    C --> D[加载 Image 内核]
+    C --> E[加载 uInitrd]
+    C --> F[加载指定 DTB]
+    D --> G[booti 启动 Linux]
+    E --> G
+    F --> G
+    G --> H[内核结合 DTB 与驱动初始化硬件]
+    H --> I[挂载 root 指定的根分区]
+    I --> J[运行原系统的前端和模拟器]
