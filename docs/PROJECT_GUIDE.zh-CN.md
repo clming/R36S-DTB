@@ -217,8 +217,7 @@ dtc --version
 
 ```bash
 work_dir=$(mktemp -d)
-dtc -I dtb -O dts -o "$work_dir/panel4-existing.dts" \
-  "R36S/Panel 4/rk3326-r35s-linux.dtb"
+dtc -I dtb -O dts -o "$work_dir/panel4-existing.dts" "R36S/Panel 4/rk3326-r35s-linux.dtb"
 ```
 
 反编译后重点检查 `panel@0`、`display-timings`、`backlight`、`odroidgo3-joypad`、PMIC、USB，以及相关节点的 `status`。
@@ -229,8 +228,7 @@ dtc -I dtb -O dts -o "$work_dir/panel4-existing.dts" \
 
 ```bash
 dtc -I dts -O dtb -o "$work_dir/panel4-candidate.dtb" DTS/Panel4.dts
-dtc -I dtb -O dts -o "$work_dir/panel4-candidate.dts" \
-  "$work_dir/panel4-candidate.dtb"
+dtc -I dtb -O dts -o "$work_dir/panel4-candidate.dts" "$work_dir/panel4-candidate.dtb"
 sha256sum "$work_dir/panel4-candidate.dtb"
 ```
 
@@ -336,3 +334,13 @@ npx --yes --package @mermaid-js/mermaid-cli mmdc -i docs/diagrams/install-flow.m
 维护本项目时阅读 [AGENTS.md](../AGENTS.md)，该文件仅存放代理工作与维护规则，涵盖 DTS/DTB 修改、二进制产物、启动参数、验证和交付。项目功能、安装/编译教程、配置对照、故障排查及流程图保留在本指南中，与规则分开维护。
 
 原 README 声明项目采用 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)。本文保留该声明，不改变现有文件的授权。仓库可公开读取不等于可以忽略其许可条款。
+
+## 10. 产品研发专题
+
+以下三份文档基于 `docs/project-dev/p1-1.png` 至 `p1-4.png`、本仓库配置和已核查的一手资料，分别定义产品目标、工程交付和推进路线。附图观察、建议规格和待实测事项已分别标明；它们是研发规划，不代表仓库已经具备完整硬件设计或可量产固件。
+
+| 文档 | 阅读用途 |
+| --- | --- |
+| [产品需求书](project-dev/01_PRODUCT_REQUIREMENTS.zh-CN.md) | 功能范围、用户场景、优先级和验收目标 |
+| [研发工作分解](project-dev/02_ENGINEERING_WORK_BREAKDOWN.zh-CN.md) | 结构机构件、原理图分册、器件选型、完整软件链和制造交付 |
+| [快速研发路线](project-dev/03_FAST_DEVELOPMENT_PLAN.zh-CN.md) | 成熟主板与自研路线比较、网络资料、首周行动、阶段计划和风险处理 |
