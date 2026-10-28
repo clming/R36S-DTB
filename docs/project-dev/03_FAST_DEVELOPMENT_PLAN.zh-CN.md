@@ -1,8 +1,25 @@
 # 基于现有项目的掌机快速研发路线
 
-版本：V0.1；资料核查日期：2026-10-28。配套文档：[产品需求书](01_PRODUCT_REQUIREMENTS.zh-CN.md)、[研发工作分解](02_ENGINEERING_WORK_BREAKDOWN.zh-CN.md)。本文的周期、样本数量和资源安排均为工程规划估计，不是供应商交期或已经执行的进度。
+版本：V0.2；资料核查日期：2026-10-28。主芯片固定为用户确认的 **Rockchip RK3326**。本版增加现有附图复核、GitHub 源码/镜像逐项入口、实际下载核查，以及同芯片参考原理图。配套文档：[产品需求书](01_PRODUCT_REQUIREMENTS.zh-CN.md)、[研发工作分解](02_ENGINEERING_WORK_BREAKDOWN.zh-CN.md)。本文的周期、样本数量和资源安排均为工程规划估计，不是供应商交期或已经执行的进度。
 
 **建议先用可持续供货、接口和软件来源明确的成熟主板，搭配一款固定屏幕，完成整机与体验样机；待需求、功耗和软件路径稳定后，再决定是否自行设计 RK3326 主板。** 本仓库能缩短设备树理解和适配时间，不能单独提供完整产品设计。若必须拥有主板完整设计文件，应在立项时把原理图/PCB/BSP 的取得或自研列为关键任务。
+
+本轮结论：原机照片显示 **ArkOS 2.0 (08232024) + EmulationStation**，优先从原卡保存匹配文件；GitHub 已找到可直接取得的 Image、DTB、DTS 和含 uInitrd 的历史更新包；电路方面找到 **Hardkernel ODROID-GO Advance Rev1.0、24 页 PDF**，但没有找到照片中 R36S-V12/V2.1 主板的完整原始设计包。具体链接及限制集中在第 3.4–3.8 节。
+
+## 0. 本轮附图复核与已确认条件
+
+当前可见 `p1-2.png`、`p1-3.png` 和 `p1-5.jpg` 至 `p1-13.jpg`；先前的 `p1-1.png`、`p1-4.png` 当前不在目录中。本次使用现有图片，不修改任何图片。
+
+| 依据 | 确认/观察结果 | 对研发的影响 |
+| --- | --- | --- |
+| 用户明确确认主芯片；[p1-13.jpg](p1-13.jpg) 主控区 | Rockchip RK3326 | 固定 SoC；不再只写“RK3326 级平台”；仍需取得完整订货型号与硬件资料 |
+| [p1-10.jpg](p1-10.jpg) | 画面文字 `ArkOS 2.0 (08232024)` | 优先追溯该系统和原卡；日期标签不能证明内核构建来源 |
+| [p1-7.jpg](p1-7.jpg)、[p1-8.jpg](p1-8.jpg)、[p1-9.jpg](p1-9.jpg) | `emulation station` 与多个平台的加载进度文字 | 确定前端家族，继续查实际分支、启动配置与核心，不能只找某个“万能模拟器” |
+| [p1-5.jpg](p1-5.jpg) | CPS I 平台页与 `32 GAMES AVAILABLE` | 游戏库数量独立于模拟器数量；需要 ROM/元数据/核心/存档的对应清单 |
+| [p1-11.jpg](p1-11.jpg) | `R36S-V12 2023-08-18`、四肩键、BAT/SPK/LEFT/RIGHT 和 UART 类焊盘 | 建立 V12 目标接口与测点表；有同名板号的网络 DTB 也须核对屏和线路 |
+| [p1-12.jpg](p1-12.jpg) | `V2.1_20250331`、双 TF 卡座、`TYPE-C DC`/`OTG`、耳机座 | 作为另一板卡版本单独管理；不等同于本仓库 Panel 4 - V22，也不默认与 p1-11 是同一板正反面 |
+
+照片没有给出屏排线完整标识、电池规格和所有器件顶标，不能据此冻结 DDR 容量、PMIC 后缀、充电参数、Type-C 协议或接口电平。本轮只把能读到的信息写入已知条件。
 
 ## 1. 三种路线怎么选
 
@@ -50,7 +67,7 @@
 | [Buildroot 官方手册](https://buildroot.org/downloads/manual/manual.html) | rootfs、工具链、项目定制和构建管理方法 | 建立自己的可重复固件工程，包含必要的前端/核心包，不从零写 Linux |
 | [genimage 官方项目](https://github.com/pengutronix/genimage) | 从配置生成文件系统及分区镜像 | 固定引导布局与分区构建；布局来自实际平台，不猜扇区偏移 |
 
-本次没有取得经过核实的 **R36S 完整可编辑原理图、PCB、机构 CAD 和生产 BOM**。Hardkernel Wiki 的相关硬件页面本次访问受限，未据此声称已取得其原理图；不要把来源不明的“同芯片电路图”直接用于投板。
+本次仍未取得 **照片中 R36S 主板的完整可编辑原理图、PCB、机构 CAD 和生产 BOM**，但已找到可阅读的 Hardkernel 同芯片参考原理图，详见第 3.8 节。必须区分“参考电路已找到”和“目标板生产文件已取得”。
 
 ### 3.2 快速验证系统：优先验证硬件，再评估可交付性
 
@@ -82,6 +99,91 @@ dArkOS 的具体候选资产为 [分卷 001](https://github.com/christianhaitian
 2. **自行集成可交付固件**：从来源明确的启动链、Linux、Buildroot、前端和核心构建，建立自有主题与配置；每个组件按实际版本核对许可并履约。Buildroot 是构建工具，不自动保证所有选中包都适合商业分发。
 
 RetroArch 与各核心许可分别管理，参考 [Libretro 官方许可清单](https://docs.libretro.com/development/licenses/)。ROM、BIOS、封面、字体和主题也单独建立来源记录。必要源码交付、版权通知、书面提供方式等取决于实际组件许可，不能用一份笼统“开源声明”替代。已有代码许可的范围和权利来源有疑问时，在选型阶段澄清，避免做完固件再返工。
+
+### 3.4 RK3326 的 GitHub 开源代码：按层选择，不混用分支
+
+| 层次 | 已核实的仓库/分支或文件 | 得到什么 | 使用范围 |
+| --- | --- | --- | --- |
+| Rockchip 通用 BSP 内核 | [rockchip-linux/kernel：develop-4.4](https://github.com/rockchip-linux/kernel/tree/develop-4.4)，[rk3326.dtsi](https://github.com/rockchip-linux/kernel/blob/develop-4.4/arch/arm64/boot/dts/rockchip/rk3326.dtsi) | SoC 公共定义、驱动和内核构建系统 | 芯片厂商基础，不含照片中 R36S 主板的完整专用交付 |
+| Hardkernel 掌机 BSP | [hardkernel/linux：odroidgoA-4.4.y](https://github.com/hardkernel/linux/tree/odroidgoA-4.4.y) | 同芯片掌机驱动和板级设备树 | 本仓库兼容字符串的直接参考；不是照片中原机 Image 的已证实源码 |
+| BSP 板级 DTS | [rk3326-odroidgo3-linux.dts](https://github.com/hardkernel/linux/blob/odroidgoA-4.4.y/arch/arm64/boot/dts/rockchip/rk3326-odroidgo3-linux.dts)（[直接下载](https://raw.githubusercontent.com/hardkernel/linux/odroidgoA-4.4.y/arch/arm64/boot/dts/rockchip/rk3326-odroidgo3-linux.dts)） | 与本仓库相同的根兼容标识；GPIO/joypad/供电/屏配置参考 | 依赖同分支 DTSI、头文件和驱动；不能单独下载一个 DTS 就当完整 BSP |
+| BSP 配置 | [odroidgoa_defconfig](https://github.com/hardkernel/linux/blob/odroidgoA-4.4.y/arch/arm64/configs/odroidgoa_defconfig) | 一份真实存在的内核配置起点 | 需按新板增改，不能声称能重现原机内核 |
+| ArkOS 相关内核 | [christianhaitian/linux：rg351](https://github.com/christianhaitian/linux/tree/rg351) 与[构建 README](https://github.com/christianhaitian/linux/blob/rg351/README) | RG351 系列源码和 Image/模块构建线索 | 对应设备和分支有边界，R36S 需核实差异 |
+| 旧启动链 | [hardkernel/u-boot：odroidgoA-v2017.09](https://github.com/hardkernel/u-boot/tree/odroidgoA-v2017.09) | 同平台 U-Boot 源码 | 引导介质、DDR 初始化与镜像布局须与目标板匹配 |
+| 社区 R36S 新内核参考 | [AndreRenaud/linux-r36s：r36s-v6.10](https://github.com/AndreRenaud/linux-r36s/tree/r36s-v6.10)，[R36S DTS](https://github.com/AndreRenaud/linux-r36s/blob/r36s-v6.10/arch/arm64/boot/dts/rockchip/rk3326-r36s.dts) | 开发者面向 R36S 的 Linux 分支及 DTS | 社区适配参考；不能与 4.4 BSP 的 DTB、模块和图形库随意混用 |
+| 社区 R36S 新引导参考 | [AndreRenaud/u-boot-r36s：r36s-v2024.04](https://github.com/AndreRenaud/u-boot-r36s/tree/r36s-v2024.04) | R36S 相关 U-Boot 改动 | 需另做启动和显示验证；不是确认适配全部主板的通用替换件 |
+| 前置二进制 | [rockchip-linux/rkbin](https://github.com/rockchip-linux/rkbin) | 平台前置固件/工具 | 部分为二进制，不应称为全部开源代码；核对 DDR、型号与许可 |
+| 游戏系统 | [christianhaitian/arkos](https://github.com/christianhaitian/arkos)、[ROCKNIX/distribution](https://github.com/ROCKNIX/distribution)、[christianhaitian/dArkOS](https://github.com/christianhaitian/dArkOS) | 更新、构建与发行文件，具体范围各不相同 | 完整固件不等于单个仓库里每个二进制都有源码；逐组件追踪 |
+| 前端/模拟器 | [EmulationStation 上游](https://github.com/Aloshi/EmulationStation)、[RetroArch](https://github.com/libretro/RetroArch)、[mGBA libretro](https://github.com/libretro/mgba)、[PPSSPP](https://github.com/hrydgard/ppsspp) | 界面、核心运行框架、模拟核心和独立模拟器代码 | 照片只确认 EmulationStation 家族，未确认原卡实际使用哪个分支/核心 |
+
+以上仓库/文件通过 GitHub API 或原始内容核对；链接中的分支名会移动，开始开发时须记录 commit 和配置。RK3326 指定了架构与硬件平台，不能单靠芯片型号选择内核镜像，更不能据此把某个分支说成原机固件源码。
+
+### 3.5 Image、uInitrd、DTB、DTS 到哪里下载：逐项清单
+
+**优先级：原卡匹配套件 → 明确支持目标板的完整系统 → 单项文件用于分析。** 下表不同来源的文件不可直接凑成一套可启动系统。
+
+| 文件/资源 | 已核实的具体入口 | 本次得到的证据 | 推荐用途 |
+| --- | --- | --- | --- |
+| 原机系统日期线索 | [ArkOS 08232024 目录](https://github.com/christianhaitian/arkos/tree/main/08232024) | 存在 `arkosupdate08232024.zip`，大小 8,351,216 字节，以及 Kodi 分卷 | 对照照片日期，查更新内容；这是增量更新目录，不是完整系统镜像，不证明就是原卡固件 |
+| Image 直接文件 | [dArkOSRE 的 BOOT 目录](https://github.com/southoz/dArkOSRE-R36/tree/main/files/BOOT)，[本次核查固定提交的 Image](https://raw.githubusercontent.com/southoz/dArkOSRE-R36/3f372c85aa53a26b265c3dc0c2661ec0fae5faf0/files/BOOT/Image) | 实际下载 12,015,624 字节，偏移 0x38 为 ARM64 Image 标识 | 检查社区候选内核，必须配套模块/rootfs/DTB；未验证匹配附图主板 |
+| uInitrd 的实际文件来源 | [ArkOS 01142023 目录](https://github.com/christianhaitian/arkos/tree/main/01142023)，[更新包直接下载](https://raw.githubusercontent.com/christianhaitian/arkos/main/01142023/arkosupdate01142023.zip) | 实际下载 ZIP 并解出 `boot/uInitrd`，6,670,221 字节 | 历史启动文件分析；不是 08232024 原机 uInitrd 的已确认副本，也不与上行 Image 默认匹配 |
+| V12 + Panel4 的 DTB 候选 | [dArkOSRE V12 Panel4 目录](https://github.com/southoz/dArkOSRE-R36/tree/main/files/BOOT/dtb/r36s/R36S-V12%202023-08-18%20Panel%204)，[固定提交的主 DTB](https://raw.githubusercontent.com/southoz/dArkOSRE-R36/3f372c85aa53a26b265c3dc0c2661ec0fae5faf0/files/BOOT/dtb/r36s/R36S-V12%202023-08-18%20Panel%204/rk3326-r36s-linux.dtb) | 实际下载 90,267 字节，FDT magic 正确；目录还含 `rg351mp-uboot.dtb` | 板号与 p1-11 有对应线索，仍要确认屏型号、驱动和文件实际加载角色；不是按目录名自动判兼容 |
+| 本仓库 DTS/DTB | [DTS 目录](../../DTS)、[Panel4.dts](../../DTS/Panel4.dts)、[Panel4 发布 DTB](../../R36S/Panel%204/rk3326-r35s-linux.dtb)；[上游 R36S-DTB 仓库](https://github.com/AeolusUX/R36S-DTB) | 本地文件可读，有多屏变体 | 用于配置对照，不推断所有历史二进制均可从现有源码重建 |
+| 社区 R36S DTS | [Linux 6.10 分支 DTS 原文](https://raw.githubusercontent.com/AndreRenaud/linux-r36s/r36s-v6.10/arch/arm64/boot/dts/rockchip/rk3326-r36s.dts) | 已读取，使用 gpio-mux/adc-joystick 等描述 | 理解不同驱动方案，配合同分支源码；不是旧 BSP DTS 的直接替代 |
+| 同时产生 Image/uInitrd/DTB 的构建参考 | [icefirex/nixos-r36s](https://github.com/icefirex/nixos-r36s)、[sd-image.nix](https://github.com/icefirex/nixos-r36s/blob/main/sd-image.nix)、[v0.1.0 发布](https://github.com/icefirex/nixos-r36s/releases/tag/v0.1.0) | 代码明确把内核/初始文件系统复制到 `boot/Image`、`boot/uInitrd`，并部署 DTB；发布资产存在 | 可重建路线研究，不能把 NixOS 的 initrd 直接用于 ArkOS；不是已集成附图全部游戏体验的现成替代 |
+
+**uInitrd 特别说明：** 名称中的 `u` 不保证存在 U-Boot legacy 头。本次提取的 ArkOS 文件以 `1f 8b` 开头，是 gzip；解压得到 15,030,272 字节，起始为 CPIO `070701`。它是启动早期文件系统内容，不是 DTB，也不是内核。是否需要头部、是否传入长度以及 bootloader 如何识别，由对应启动方案决定。旧更新包里有这个文件，不代表应直接覆盖现在的启动分区。
+
+在 dArkOSRE 当前 `files/BOOT` 根目录列表中，本次看到了 Image 和 DTB，但**没有看到 uInitrd**；其 boot.ini 却仍加载 uInitrd。因此不能声称下载这个目录就获得完整启动套件，应继续查看完整发行镜像/制作流程或使用原卡配套文件。
+
+### 3.6 完整系统镜像库与配套文件提取
+
+| 目的 | 下载位置 | 如何取得启动文件 |
+| --- | --- | --- |
+| 最大程度接近照片中的老 ArkOS | [ArkOS-R3XS 维护者下载页](https://github.com/AeolusUX/ArkOS-R3XS/wiki)、[原 ArkOS Wiki](https://github.com/christianhaitian/arkos/wiki) | 原卡优先；网络镜像需核对机型/发布日期。解压 `.img` 后只读查看实际启动分区，取得同一镜像内 Image/uInitrd/DTB 和启动配置 |
+| dArkOS 候选 | [v08272026 发布及两个分卷](https://github.com/christianhaitian/dArkOS/releases/tag/v08272026)，具体链接见 3.2 | 两卷放同一目录，从 `.001` 解压；RG351MP 资产不自动等于 R36S 已验证兼容 |
+| ROCKNIX 候选 | [20261001-a 镜像及 SHA-256](https://github.com/ROCKNIX/distribution/releases/tag/20261001)，具体直接链接见 3.2 | 按该系统启动机制处理，不能要求它一定采用 ArkOS 同名 uInitrd 或相同文件布局 |
+| R36S 专项社区套件 | [southoz/dArkOSRE-R36 Releases](https://github.com/southoz/dArkOSRE-R36/releases) | 根据维护者发布说明取得完整镜像/安装包；BOOT 目录单独文件只作分析，不能替代完整发布说明 |
+| NixOS 实验参考 | [nixos-r36s-sd-card.img.zst](https://github.com/icefirex/nixos-r36s/releases/download/v0.1.0/nixos-r36s-sd-card.img.zst) | GitHub API 确认资产 722,664,750 字节；构建代码显示文件放在 rootfs 的 `/boot`，不只在 FAT 启动分区；本次未下载 |
+
+提取流程：记录下载 URL、版本和校验 → 解压镜像 → 用已有支持分区的工具只读打开 → 阅读启动配置 → 提取它真正引用的文件 → 连同 rootfs 模块/图形库版本一起归档。若现有 Windows 工具不能读取 ext4，只记录需要相应读取环境；本次不安装软件、不为了提取去格式化或修改镜像。
+
+只有同一系统内配套的内核、initrd、模块、图形栈和 DTB 才有明确的验证起点。修改屏幕通常先保留内核与 initrd，调整已确认的屏配置；未知供电与 GPIO 不靠“同芯片”猜测。
+
+### 3.7 本次实际下载与检查记录
+
+为确认资源真实存在，本次只将一个约 20 MB 的历史更新包、其中的 uInitrd、一份约 12 MB 的 Image 和一份 DTB 放入**仓库外系统临时目录**进行只读检查；没有下载 GB 级完整系统、安装工具、编译或烧卡，仓库发布目录未写入任何二进制。检查结果如下：
+
+| 对象 | 长度（字节） | SHA-256 | 检查范围 |
+| --- | --- | --- | --- |
+| `arkosupdate01142023.zip` | 20,702,936 | `5fc21978bdd36f2601cdc9629f219ebfa519f14a3f10b716adfe1aeef6013405` | ZIP 可打开，存在 `boot/uInitrd` |
+| ZIP 中的 `boot/uInitrd` | 6,670,221 | `21b4184c5ef859f19a879dbb7a76ee5ab7d63d4aca41f6f266eb5a4a9f1b8db3` | gzip 可解压，起始 CPIO 格式可识别；未运行其中程序 |
+| dArkOSRE 的 `Image` | 12,015,624 | `495429f04a227b7c4b67588f6e808c9195c7c79ebe50b32609e1c93d062fd480` | ARM64 Image 标识；未确认内核版本/构建配置，未启动 |
+| dArkOSRE V12 Panel4 主 DTB | 90,267 | `8e7732f99d509ec675480c842b6c44cb71752bcf933fa6eb333f4e97d5044d97` | FDT magic；未以 dtc 反编译或证明与源码语义相同 |
+
+dArkOSRE 两个文件固定到提交 `3f372c85aa53a26b265c3dc0c2661ec0fae5faf0`，避免后续 main 分支移动导致哈希无法对照。ZIP 来源为原 ArkOS 已归档仓库。哈希与文件头只能证明本次取得的内容及格式线索，不能证明这些不同来源文件能互相配套启动。
+
+### 3.8 找到的参考设计电路图及如何用于这个产品
+
+**已找到：Hardkernel 编制的 `ODROID_GO_ADVANCE_rev1.0.pdf`，PDF 共 24 页，图框为 Revision 1.0、2019-12-06。** 这是采用 RK3326/RK817 的掌机参考电路，适合用来理解最小系统和外设连接，不是 R36S-V12 或 V2.1 的原始设计。
+
+- [原发布服务器上的 PDF 地址](https://dn.odroid.com/ODROID_GO_ADVANCE/ODROID_GO_ADVANCE_rev1.0.pdf)：本次 HTTP/HTTPS 获取均返回 403，记录为原始来源入口，不能声称当前可直接下载。
+- [同名参考图 PDF 镜像](https://device.report/m/0d5c9bb96a58f7f07489cd9fa7582dc0ece8082478040c00a46f66118e8ab2c3.pdf)（[在线阅读页](https://device.report/m/0d5c9bb96a58f7f07489cd9fa7582dc0ece8082478040c00a46f66118e8ab2c3)）：网页工具已读取 PDF 文本与图框，并调用页面截图核查。镜像托管方不是原作者；本次命令行直接下载也返回 403，未取得本地 PDF 或计算文件哈希。
+
+图纸包含 RK3326 最小系统、DDR、RK817 电源/音频、LCD、SD、USB、UART、按键和供电接口等分册，可作为第 2 份文档原理图工作的参考；这里未取得原生 SchDoc、PCB 布线文件或商业复制授权，PDF 中出现源文件名不代表已提供这些源文件。
+
+| 对照方面 | OGA 参考图与附图 R36S 的区别 | 研发必须补做 |
+| --- | --- | --- |
+| 屏幕 | OGA 图中是自己的 KD35T133-A2 接口方案；不能当作本机 640×480 屏的规格书 | 获取目标屏 FPC、初始化、lane、供电与时序，核对整个显示链 |
+| 输入 | OGA 原版输入与附图双摇杆/四肩键/FN 布局不同 | 逐键和四轴测量，决定 ADC 多路器/引脚方案，再匹配驱动 |
+| 存储 | 参考图与附图双 TF 布局不同 | 独立设计第二卡控制器、供电/检测及内容挂载策略 |
+| USB/充电 | 参考图有自身的 USB/供电连接器；附图为 DC/OTG 两 Type-C | 设计并验证 CC、角色、VBUS、限流和反灌，不只更换插座封装 |
+| 电源/DDR | 同芯片不等于相同电芯、DDR 型号和电源网络 | 核对实际料号、封装、电压、时序和初始化，不无条件复制参数 |
+| 机构/PCB | 参考产品轮廓和内部堆叠不同 | 重新做板框、孔位、高速布局、热与装配设计 |
+
+推荐执行：先读参考图理解功能 → 固定照片中的一块目标板 → 用高清双面照片和测量建立接口/网络对照 → 绘制自己的可编辑电路 → 结合 RK3326 原厂硬件约束完成 PCB → 逐阶段点亮与验证。照片看不到 BGA/内层网络，DTS 也不能补出所有电源、阻容与保护电路。
+
+**本次没有找到可核实的 R36S-V12/V2.1 完整原厂电路图或生产 Gerber。** 若目标是快速生产同功能整机，优先采购资料交付明确的成熟方案；若目标是掌握主板设计，则以此同芯片参考图为起点，向原厂/方案商补齐设计资料并自行设计，不能把 PDF 改名为 R36S 后当成可投产资料。
 
 ## 4. 第一周：最大限度消除未知
 
@@ -240,10 +342,10 @@ dmesg
 
 ## 11. 可以立即执行的启动清单
 
-1. 将三份文档作为 V0.1，确认“成熟主板首版、固定一款屏、离线、基础平台优先”的候选范围。
+1. 将三份文档作为 V0.2，按已确认 RK3326、附图 ArkOS/EmulationStation 和不同板号记录，确认“成熟主板首版、固定一款屏、离线、基础平台优先”的候选范围。
 2. 准备同批次样机、备用卡和测量工具，建立编号、备份和实测记录；本次尚未采购或接触样机。
 3. 向至少两家方案供应商索取第 4 节资料和分档报价，尤其是主板/屏接口、BSP 与可分发组件。
 4. 同时建立原型结构和软件功能闭环，不先开量产模具，也不先承诺全部平台性能。
 5. 第一周 G0 评审后选择供应商、固件路径和是否需要自研主板；按出口条件推进 EVT/DVT/PVT。
 
-本次完成的是可执行的研发方案和资料核查，不是已经完成产品研发。网络来源已按维护者/厂商入口核对，但完整系统未下载或编译；未验证任何候选固件与附图实物的兼容性，也未取得制造级硬件资料和供应商报价。
+本次完成的是研发方案补充、当前附图复核、GitHub 来源核查、少量启动文件下载/格式/哈希检查，以及参考原理图阅读，不是已经完成产品研发。完整系统未下载或编译；没有安装工具、运行候选固件或烧录设备，未验证任何候选固件与附图实物的兼容性，也未取得 R36S 制造级硬件资料和供应商报价。第 3.7 节的静态检查不能代替编译或实机验证。
