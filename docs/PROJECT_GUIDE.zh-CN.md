@@ -337,10 +337,50 @@ npx --yes --package @mermaid-js/mermaid-cli mmdc -i docs/diagrams/install-flow.m
 
 ## 10. 产品研发专题
 
-以下三份文档基于 `docs/project-dev/p1-1.png` 至 `p1-4.png`、本仓库配置和已核查的一手资料，分别定义产品目标、工程交付和推进路线。附图观察、建议规格和待实测事项已分别标明；它们是研发规划，不代表仓库已经具备完整硬件设计或可量产固件。
+以下专题文档基于 `docs/project-dev/` 中现有的 `p1-x` 附图、本地参考电路图、本仓库配置和已核查的一手资料，分别说明产品目标、工程交付、推进路线及基础技术。附图观察、建议规格和待实测事项已分别标明；这些文档不代表仓库已经具备完整硬件设计或可量产固件。
 
 | 文档 | 阅读用途 |
 | --- | --- |
 | [产品需求书](project-dev/01_PRODUCT_REQUIREMENTS.zh-CN.md) | 功能范围、用户场景、优先级和验收目标 |
 | [研发工作分解](project-dev/02_ENGINEERING_WORK_BREAKDOWN.zh-CN.md) | 结构机构件、原理图分册、器件选型、完整软件链和制造交付 |
 | [快速研发路线](project-dev/03_FAST_DEVELOPMENT_PLAN.zh-CN.md) | 成熟主板与自研路线比较、网络资料、首周行动、阶段计划和风险处理 |
+| [芯片、启动配置与模拟器及游戏](project-dev/04_CHIPS_BOOT_EMULATORS_GAMES.zh-CN.md) | RK3326/RK817 分工、boot.ini 逐项解析、模拟器下载与安装、游戏内容来源和导入 |
+| [Linux 源码定位与启动文件清单](project-dev/05_RK3326_LINUX_SOURCE_BOOT_FILES.zh-CN.md) | 由 Panel4 compatible 定位源码分支，区分引导、内核、initrd、设备树、rootfs 和应用，并列出取得位置 |
+| [首版产品基线与验收](project-dev/06_PRODUCT_BASELINE_AND_ACCEPTANCE.zh-CN.md) | 冻结范围、交互合同、逐项测试用例、性能口径与缺陷放行 |
+| [结构设计与开模执行](project-dev/07_MECHANICAL_DESIGN_AND_TOOLING.zh-CN.md) | 样机测绘、坐标与尺寸链、机构件、手板、模具及装配交付 |
+| [电子硬件与首次点亮](project-dev/08_ELECTRONICS_SCHEMATIC_BRINGUP.zh-CN.md) | 资料申请、原理图分册、BOM/PCB、接口表、逐步上电和官方芯片联系渠道 |
+| [固件、模拟器与恢复发布](project-dev/09_FIRMWARE_EMULATORS_RELEASE.zh-CN.md) | 基线取证、构建交付、设备树适配、核心打包、内容与版本、镜像恢复 |
+| [排期、官方联系与采购试产](project-dev/10_PROJECT_PROCUREMENT_PILOT_EXECUTION.zh-CN.md) | 首十日任务、阶段门、已核实官方联系方式、询价模板、成本和试产追溯 |
+| [RK3326 供货风险与替代平台](project-dev/11_RK3326_REPLACEMENT_STRATEGY.zh-CN.md) | 区分停产证据与供货风险，对比 H700、RK3566/3568、A133 及升级路线，列出工程迁移和取样决策 |
+| [掌机市场与切入调查](project-dev/12_HANDHELD_MARKET_ENTRY_RESEARCH.zh-CN.md) | 截至调查日的竞品/官网价格与平台，区分销量和热度，给出国内外定位与验证任务 |
+| [掌机与蓝牙歌词播放器二合一](project-dev/13_HANDHELD_BLUETOOTH_PLAYER_INTEGRATION.zh-CN.md) | 视频/JPG 关键帧复核、先掌机后播放器的路线、模式切换、无 Wi-Fi/单卡/表盘/歌词与硬件集成 |
+| [二合一技术瓶颈与验证](project-dev/14_INTEGRATION_BOTTLENECKS_AND_VALIDATION.zh-CN.md) | 区分音频/元数据/歌词，审查 V05 假设，列出 USB/供电/关机闹钟等风险、验证用例和放行证据 |
+
+新增 06–10 为可下发任务的研发执行稿，建议指标、样本量和排期尚需评审与实测冻结；官方联系资料核查日期为 2026-10-29，实际联系前应复核对应来源。尚未确认照片中整机的制造主体，也未执行对外联系、采购或实机验证。
+
+2026-10-29 供货与市场更新：RK3326 作为原机事实保留，新产品主控按 11 文档重新评审；未取得 RK3326 专属官方 EOL/PCN 或原板厂停供函，不把传闻直接写成既定停产事实。06–10 已增加国内与海外的需求、结构、电路、固件及项目任务，国家/SKU、官方法规来源、2027 年相关节点与放行条件集中在 [10 手册第 13 节](project-dev/10_PROJECT_PROCUREMENT_PILOT_EXECUTION.zh-CN.md#13-国内与海外销售的新增工作包2026-10-29)。本轮仍是案头调查，未取得替代板报价或完成消费者/实机验证。
+
+## 11. 二合一掌机的集成架构
+
+2026-10-30 按新增 MP4/JPG、用户聊天附图和本地 V05 需求稿形成 13、14 两份独立文档。四段视频按关键帧画面复核，未监听音轨或进行设备抓包；画面可证明表盘/动态显示参考，不能证明歌词实际通过蓝牙传输。采用先掌机、后播放器的交付顺序，同时前置验证歌词和关机唤醒，避免定板后返工。
+
+下图同步自 [handheld-bt-integration.mmd](diagrams/handheld-bt-integration.mmd)，为推荐 Linux 路线的逻辑架构，尚未实现。单卡、无 Wi-Fi、不开发手机专用 App 的约束按本轮资料纳入；标准蓝牙音频与媒体元数据不能自动等同于歌词能力。
+
+```mermaid
+flowchart LR
+    Phone["手机现有音乐 App"] -->|"A2DP 音频"| BT["蓝牙控制器与接收后端"]
+    BT -->|"解码 PCM"| Audio["音频仲裁与路由"]
+    Game["游戏前端与模拟器"] -->|"PCM"| Audio
+    Audio --> Codec["Codec / 功放 / 本机扬声器"]
+    BT -->|"AVRCP 元数据及已验证歌词通道"| Lyrics["歌词适配与同步"]
+    LRC["单 TF 上的离线 LRC"] --> Lyrics
+    Lyrics --> UI["播放器与表盘 UI"]
+    Mic["麦克风与采集设备"] --> FFT["声音分析与可视化"]
+    FFT --> UI
+    Clock["RTC / 环境温度传感器"] --> UI
+    Key["专用键与模式管理"] --> Game
+    Key --> UI
+    Key --> Audio
+```
+
+听歌出声、实际歌词、游戏保存与模式交接、软关机唤醒、四设备 USB/供电、单卡安全导入分别验收。原厂编辑器并非设备端运行时，原厂资源/协议的使用和适配范围须另核；本轮未安装、编译、刷卡或执行实机验证。

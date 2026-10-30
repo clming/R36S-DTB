@@ -1,0 +1,14 @@
+flowchart LR
+    Phone["手机现有音乐 App"] -->|"A2DP 音频"| BT["蓝牙控制器与接收后端"]
+    BT -->|"解码 PCM"| Audio["音频仲裁与路由"]
+    Game["游戏前端与模拟器"] -->|"PCM"| Audio
+    Audio --> Codec["Codec / 功放 / 本机扬声器"]
+    BT -->|"AVRCP 元数据及已验证歌词通道"| Lyrics["歌词适配与同步"]
+    LRC["单 TF 上的离线 LRC"] --> Lyrics
+    Lyrics --> UI["播放器与表盘 UI"]
+    Mic["麦克风与采集设备"] --> FFT["声音分析与可视化"]
+    FFT --> UI
+    Clock["RTC / 环境温度传感器"] --> UI
+    Key["专用键与模式管理"] --> Game
+    Key --> UI
+    Key --> Audio
