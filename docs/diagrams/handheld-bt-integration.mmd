@@ -1,14 +1,19 @@
 flowchart LR
-    Phone["手机现有音乐 App"] -->|"A2DP 音频"| BT["蓝牙控制器与接收后端"]
-    BT -->|"解码 PCM"| Audio["音频仲裁与路由"]
-    Game["游戏前端与模拟器"] -->|"PCM"| Audio
-    Audio --> Codec["Codec / 功放 / 本机扬声器"]
-    BT -->|"AVRCP 元数据及已验证歌词通道"| Lyrics["歌词适配与同步"]
-    LRC["单 TF 上的离线 LRC"] --> Lyrics
-    Lyrics --> UI["播放器与表盘 UI"]
-    Mic["麦克风与采集设备"] --> FFT["声音分析与可视化"]
+    Phone["移动设备：酷狗音乐 / 汽水音乐等"] -->|"A2DP 接收"| BT["BlueZ / BlueALSA 与蓝牙控制器"]
+    BT -->|"接收 PCM"| Audio["audio-router：模式互斥路由"]
+    Game["原 ArkOS / 模拟器"] -->|"游戏 PCM"| Audio
+    Audio -->|"游戏 A2DP 发射"| BT
+    BT -->|"Source"| Remote["外部蓝牙音箱"]
+    Audio --> Local["两模式共用本机 Codec / 功放 / 扬声器（支持耳机）"]
+    BT -->|"媒体信息与已验证推送歌词"| Lyrics["media-adapter / lyrics-resolver"]
+    LRC["单 TF：P1 离线 LRC"] --> Lyrics
+    Lyrics --> UI["SDL2 clock-ui / 9款表盘"]
+    Mic["H9 USB 麦克风采集"] --> FFT["capture-worker / FFT"]
     FFT --> UI
-    Clock["RTC / 环境温度传感器"] --> UI
-    Key["专用键与模式管理"] --> Game
-    Key --> UI
-    Key --> Audio
+    Sensors["H8 DS3231 / H11 环境温度"] -->|"I²C，拟定桥接"| MCU["H4 常供电 MCU / H5 RGB / H10 唤醒"]
+    MCU -->|"CDC 状态 / 时间 / 温度"| UI
+    Key["专用键 / 原掌机按键"] --> Mode["mode-daemon / input-router"]
+    Mode --> Game
+    Mode --> UI
+    Mode --> Audio
+    Mode <-->|"CDC 命令 / ACK"| MCU

@@ -353,8 +353,8 @@ npx --yes --package @mermaid-js/mermaid-cli mmdc -i docs/diagrams/install-flow.m
 | [排期、官方联系与采购试产](project-dev/10_PROJECT_PROCUREMENT_PILOT_EXECUTION.zh-CN.md) | 首十日任务、阶段门、已核实官方联系方式、询价模板、成本和试产追溯 |
 | [RK3326 供货风险与替代平台](project-dev/11_RK3326_REPLACEMENT_STRATEGY.zh-CN.md) | 区分停产证据与供货风险，对比 H700、RK3566/3568、A133 及升级路线，列出工程迁移和取样决策 |
 | [掌机市场与切入调查](project-dev/12_HANDHELD_MARKET_ENTRY_RESEARCH.zh-CN.md) | 截至调查日的竞品/官网价格与平台，区分销量和热度，给出国内外定位与验证任务 |
-| [掌机与蓝牙歌词播放器二合一](project-dev/13_HANDHELD_BLUETOOTH_PLAYER_INTEGRATION.zh-CN.md) | 视频/JPG 关键帧复核、先掌机后播放器的路线、模式切换、无 Wi-Fi/单卡/表盘/歌词与硬件集成 |
-| [二合一技术瓶颈与验证](project-dev/14_INTEGRATION_BOTTLENECKS_AND_VALIDATION.zh-CN.md) | 区分音频/元数据/歌词，审查 V05 假设，列出 USB/供电/关机闹钟等风险、验证用例和放行证据 |
+| [掌机与蓝牙歌词播放器二合一](project-dev/13_HANDHELD_BLUETOOTH_PLAYER_INTEGRATION.zh-CN.md) | 按V05的FR/H逐项设计、软硬件接口、双向蓝牙、9表盘/RTC/USB导入及阶段0～7交付 |
+| [二合一技术瓶颈与验证](project-dev/14_INTEGRATION_BOTTLENECKS_AND_VALIDATION.zh-CN.md) | 按V05建立歌词/USB/关机唤醒等攻关步骤、T00～T23验收及失败回退与放行标准 |
 
 新增 06–10 为可下发任务的研发执行稿，建议指标、样本量和排期尚需评审与实测冻结；官方联系资料核查日期为 2026-10-29，实际联系前应复核对应来源。尚未确认照片中整机的制造主体，也未执行对外联系、采购或实机验证。
 
@@ -362,25 +362,36 @@ npx --yes --package @mermaid-js/mermaid-cli mmdc -i docs/diagrams/install-flow.m
 
 ## 11. 二合一掌机的集成架构
 
-2026-10-30 按新增 MP4/JPG、用户聊天附图和本地 V05 需求稿形成 13、14 两份独立文档。四段视频按关键帧画面复核，未监听音轨或进行设备抓包；画面可证明表盘/动态显示参考，不能证明歌词实际通过蓝牙传输。采用先掌机、后播放器的交付顺序，同时前置验证歌词和关机唤醒，避免定板后返工。
+产品核心：通过同一个专用物理键切换游戏与蓝牙音箱模式，共用本机功放和扬声器。游戏模式默认播放游戏声音；音箱模式接收手机等移动设备上酷狗音乐、汽水音乐等 App 的播放。音乐 App 运行在移动设备上，掌机负责接收与播放；歌词兼容性单独验证。详细行为和验收分别见第13、14份研发文档。
 
-下图同步自 [handheld-bt-integration.mmd](diagrams/handheld-bt-integration.mmd)，为推荐 Linux 路线的逻辑架构，尚未实现。单卡、无 Wi-Fi、不开发手机专用 App 的约束按本轮资料纳入；标准蓝牙音频与媒体元数据不能自动等同于歌词能力。
+闹钟按最新需求覆盖运行、待机和软件关机三种状态，游戏与音箱模式均生效：运行时直接响铃，待机时唤醒后响铃，软件关机时由RTC与常电唤醒电路触发开机并在设定时刻响铃。电池拔除、硬断电或电量不足以启动不承诺提醒。三态分别验收，目前仍为待实现、待实机验证要求。
+
+2026-10-31：13、14按[gl二合一游戏机V05.md](project-dev/gl二合一游戏机V05.md)重写为V0.2执行文档。本轮以R36S/RK3326/ArkOS改装为对象，单TF、无触摸、不开发手机专用App；替代SoC属于另行量产决策。保留游戏蓝牙外放、P0手机歌词、H8 DS3231/H10关机唤醒、H9麦克风FFT、H11环境温度、9款表盘、4寸最终屏和USB线连PC导入。开放规范为P0，LRC/律动/PC编辑器及AstroToo转换器为正式P1，HFP为P2。
+
+[13详细设计](project-dev/13_HANDHELD_BLUETOOTH_PLAYER_INTEGRATION.zh-CN.md)提供FR-1～FR-10/H1～H11追踪、MCU与服务协议、按键/模式交接、单卡导入和阶段0～7交付；[14攻关与验收](project-dev/14_INTEGRATION_BOTTLENECKS_AND_VALIDATION.zh-CN.md)提供前置关卡、取证/实验/失败排查与T00～T23验收矩阵。当前均为待实施设计，不能将目标指标、官方资料存在或模拟UI等同于实机通过。原V05不修改。
+
+下图与[handheld-bt-integration.mmd](diagrams/handheld-bt-integration.mmd)及13文档同步。MCU常供电/I²C桥接、蓝牙实际歌词通道需验证；USB角色切换与安全导入卷按13第12节处理。
 
 ```mermaid
 flowchart LR
-    Phone["手机现有音乐 App"] -->|"A2DP 音频"| BT["蓝牙控制器与接收后端"]
-    BT -->|"解码 PCM"| Audio["音频仲裁与路由"]
-    Game["游戏前端与模拟器"] -->|"PCM"| Audio
-    Audio --> Codec["Codec / 功放 / 本机扬声器"]
-    BT -->|"AVRCP 元数据及已验证歌词通道"| Lyrics["歌词适配与同步"]
-    LRC["单 TF 上的离线 LRC"] --> Lyrics
-    Lyrics --> UI["播放器与表盘 UI"]
-    Mic["麦克风与采集设备"] --> FFT["声音分析与可视化"]
+    Phone["移动设备：酷狗音乐 / 汽水音乐等"] -->|"A2DP 接收"| BT["BlueZ / BlueALSA 与蓝牙控制器"]
+    BT -->|"接收 PCM"| Audio["audio-router：模式互斥路由"]
+    Game["原 ArkOS / 模拟器"] -->|"游戏 PCM"| Audio
+    Audio -->|"游戏 A2DP 发射"| BT
+    BT -->|"Source"| Remote["外部蓝牙音箱"]
+    Audio --> Local["两模式共用本机 Codec / 功放 / 扬声器（支持耳机）"]
+    BT -->|"媒体信息与已验证推送歌词"| Lyrics["media-adapter / lyrics-resolver"]
+    LRC["单 TF：P1 离线 LRC"] --> Lyrics
+    Lyrics --> UI["SDL2 clock-ui / 9款表盘"]
+    Mic["H9 USB 麦克风采集"] --> FFT["capture-worker / FFT"]
     FFT --> UI
-    Clock["RTC / 环境温度传感器"] --> UI
-    Key["专用键与模式管理"] --> Game
-    Key --> UI
-    Key --> Audio
+    Sensors["H8 DS3231 / H11 环境温度"] -->|"I²C，拟定桥接"| MCU["H4 常供电 MCU / H5 RGB / H10 唤醒"]
+    MCU -->|"CDC 状态 / 时间 / 温度"| UI
+    Key["专用键 / 原掌机按键"] --> Mode["mode-daemon / input-router"]
+    Mode --> Game
+    Mode --> UI
+    Mode --> Audio
+    Mode <-->|"CDC 命令 / ACK"| MCU
 ```
 
-听歌出声、实际歌词、游戏保存与模式交接、软关机唤醒、四设备 USB/供电、单卡安全导入分别验收。原厂编辑器并非设备端运行时，原厂资源/协议的使用和适配范围须另核；本轮未安装、编译、刷卡或执行实机验证。
+2026-10-30曾对视频关键帧复核；本轮不重新监听音轨或作蓝牙抓包。PC编辑器不是设备端播放器，协议/资源使用范围另核。本轮未安装、编译、刷卡、修改设备参数或执行硬件实验。
