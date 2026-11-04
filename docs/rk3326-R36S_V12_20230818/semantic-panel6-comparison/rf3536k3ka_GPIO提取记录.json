@@ -1,0 +1,15 @@
+{
+  "source": "rf3536k3ka.resolved.dts",
+  "source_sha256": "1d76f38164ebdb0f156e23ab034099774f6d4c646ec7088d68afea92734c24dd",
+  "excel": "rf3536k3ka_GPIO功能键清单.xlsx",
+  "sheets": 7,
+  "digital_button_gpios": 19,
+  "rocker_related_gpios": 3,
+  "adc_buttons": 3,
+  "analog_axes": 4,
+  "pmic_powerkey": 1,
+  "all_gpio_signal_descriptors": 49,
+  "gpio_bank_offset_mapping": "bank, offset -> GPIO<bank>_<ABCD[offset//8]><offset%8>",
+  "physical_button_names": "Not specified by this DTS for key-gpios; not inferred",
+  "compile_exit": 0
+}

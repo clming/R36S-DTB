@@ -201,7 +201,7 @@ Panel 5/6 附带 `Image`，但仓库未说明其完整内核版本、模块配�
 
 ### 6.1 工具准备
 
-使用 [Device Tree Compiler（dtc）官方仓库](https://github.com/dgibson/dtc) 提供的工具。下面命令在安装了 `dtc` 的 Linux/WSL 环境中运行；Windows 普通文件复制无需 WSL。
+使用 [Device Tree Compiler（dtc）官方仓库](https://github.com/dgibson/dtc) 提供的工具。本仓库现已提供 Windows x64/Linux x86_64 的 DTC 1.7.2 和转换、对比脚本，详见[第 6.6 节](#66-仓库自带工具使用说明)。下面的原生 `dtc` 命令在安装了 `dtc` 的 Linux/WSL 环境中运行。
 
 Debian/Ubuntu 环境示例：
 
@@ -234,7 +234,7 @@ sha256sum "$work_dir/panel4-candidate.dtb"
 
 检查编译退出状态和警告后再继续。旧设备树可能产生警告，不能一概忽略，也不要默认添加 `-f` 强制输出。编译成功只能验证一部分结构和语法，不能保证实机可用。
 
-仓库没有构建脚本和编译器版本锁定记录。源码中的大量数字 `phandle` 和 `__symbols__` 反映了展开后的设备树形式；重命名节点或修改引用时要检查整棵树。
+仓库的转换入口为 `tools/dt_tools.py`，所带编译器版本及哈希记录在 `tools/vendor/manifest.json`；这些工具不代表已建立历史 DTB 与全部源文件之间的可复现构建关系。源码中的大量数字 `phandle` 和 `__symbols__` 反映了展开后的设备树形式；重命名节点或修改引用时要检查整棵树。
 
 ### 6.4 比较前后语义
 
@@ -260,7 +260,132 @@ Get-FileHash -Algorithm SHA256 -LiteralPath '.\R36S\Panel 4\rk3326-r35s-linux.dt
 
 记录机型、板号、屏幕标识、系统/内核版本、修改目的、源 DTS、编译器版本、编译命令、产物 SHA-256 和实机结果。发布时明确哪些功能已测、哪些未测。
 
-本次文档整理只进行了静态源码阅读、哈希比较和 DTB 结构检查。当前环境未找到 `dtc`，也没有连接掌机，因此上面的编译和安装步骤未在本次执行中完成实机验证。
+2026-11-03 更新：已在 Windows 上使用 DTC 1.7.2 对 `R36S` 中全部 24 个 DTB 反编译并重新编译，核对了节点、原始属性数据、内存保留表及启动 CPU ID。转换工具的验证范围见下节；尚未连接掌机，未进行实机验证。
+
+### 6.6 仓库自带工具使用说明
+
+工具入口和第三方来源见 [tools/README.md](../tools/README.md)。Python 脚本需要 **Python 3.6 或以上版本**，无需安装 pip 包；Python 2.7 不支持。下列命令均从仓库根目录执行，带空格的路径必须加引号。
+
+#### Windows 准备
+
+当前电脑可用的 Python 3 位于 `D:\python3.6.8\python.exe`。在 PowerShell 中设置解释器路径；其他电脑换成自己的 Python 3 路径：
+
+```powershell
+Set-Location 'D:\GitHub\R36S-DTB'
+$python = 'D:\python3.6.8\python.exe'
+& $python --version
+& $python tools/dt_tools.py version
+& $python tools/dt_tools.py --help
+```
+
+`version` 应显示所选程序路径及 `Version: DTC 1.7.2`。Windows 自动使用 `tools/bin/windows-x86_64/dtc.exe`，不需要 WSL。
+
+#### 单个 DTB 反编译为 DTS
+
+```powershell
+& $python tools/dt_tools.py decompile 'R36S/Panel 6/rk3326-r35s-linux.dtb' -o "$env:TEMP/panel6.dts"
+```
+
+生成内容沿用 `DTS/*.dts` 的风格：UTF-8 无 BOM、CRLF 换行、Tab 缩进、十六进制数值以及使用 `\0` 连接的字符串列表。保留二进制中节点和属性的顺序，不额外排序。原始源码的注释、宏、标签名称及 include 文件拆分无法从 DTB 完整恢复。
+
+脚本先在系统临时目录生成 DTS，再重新编译，对比全部节点路径、原始属性字节、内存保留表和启动 CPU ID；核对一致才写入指定位置。输出文件已存在时拒绝覆盖，确认需要替换时添加 `--overwrite`。该选项只允许替换输出文件，不会给 `dtc` 添加 `-f`。
+
+#### DTS 编译为 DTB
+
+```powershell
+& $python tools/dt_tools.py compile 'R36S/Panel 6/rk3326-r35s-linux.dts' -o "$env:TEMP/panel6-candidate.dtb"
+```
+
+编译后检查 DTB 结构并打印产物 SHA-256。先在临时目录复核，再根据实际系统和硬件决定是否使用。工具不自动替换启动分区文件。编译支持 `dtc` 本身的 DTS 语法；包含 C 语言 `#include`、宏或内核头文件的源码，需要先按对应内核构建流程预处理。
+
+#### 批量反编译
+
+输出到另一个目录并保留相对目录结构：
+
+```powershell
+& $python tools/dt_tools.py batch-decompile R36S --output-dir "$env:TEMP/r36s-dts"
+```
+
+直接在每个原 DTB 旁生成同名 DTS：
+
+```powershell
+& $python tools/dt_tools.py batch-decompile R36S
+```
+
+`R36S` 目前已有上次生成的 DTS，第二条命令会提示文件已存在。确需重新生成时使用：
+
+```powershell
+& $python tools/dt_tools.py batch-decompile R36S --overwrite
+```
+
+批量模式递归查找 `*.dtb`；不处理 `.dtb.orig` 和 `.dtb.tony`。所有文件转换及回编译验证通过后才开始写入结果；写入期间若发生磁盘或权限错误，仍可能只写入部分文件。
+
+#### 对比两个设备树
+
+```powershell
+& $python tools/dt_tools.py compare 'R36S/Panel 4/rk3326-r35s-linux.dtb' 'R36S/Panel 6/rk3326-r35s-linux.dtb' --screen --json "$env:TEMP/panel4-vs-panel6.json"
+```
+
+输入可以是 DTB 或 DTS；DTS 会先临时编译。终端默认显示最多 20 项属性差异，可用 `--limit 100` 调整；JSON 报告保留全部差异。报告文件已存在时拒绝覆盖，请选择新文件名。
+
+| 报告字段 | 含义 |
+| --- | --- |
+| `exact_tree_equal` | 全部节点、原始属性数据、内存保留表、启动 CPU ID 是否一致，不要求二进制布局及填充相同 |
+| `different_properties` | 节点路径和属性名构成的键下，新增、删除或数值不同的属性数量 |
+| `left_only_nodes` / `right_only_nodes` | 各输入独有的节点路径 |
+| `differences` | 属性位置及两侧值；长数据用字节数和 SHA-256 表示 |
+| `screen` | 添加 `--screen` 后输出屏幕初始化字节相似度、相同命令数量及各时序节点 |
+
+默认的属性差异统计排除 `phandle` / `linux,phandle` 定义和 `__symbols__`、`__fixups__`、`__local_fixups__` 元数据；添加 `--include-metadata` 可以纳入它们。`exact_tree_equal` 始终包含这些数据。**其他属性中的数字引用仍按原始字节比较，没有跨文件解析 phandle 引用**；因此不能把统计数字理解为已消除所有引用编号差异的硬件语义比较。不同名称的节点也不会自动视为同一节点。
+
+#### 查找最接近的 DTB
+
+以当前原卡备份中的设备树为参考，按屏幕初始化序列排序：
+
+```powershell
+& $python tools/dt_tools.py rank 'docs/rk3326-R36S_V12_20230818/zj_boot/rf3536k3ka.dtb' R36S --screen --top 10 --json "$env:TEMP/r36s-screen-ranking.json"
+```
+
+去掉 `--screen`，则按整棵树的不同属性数量从少到多排序。候选为指定目录中递归发现的 `.dtb`，如果参考文件本身位于目录内，会跳过同一路径。终端显示前 `--top` 项，JSON 保存全部候选。
+
+屏幕比较针对 `/dsi@ff450000/panel@0` 的 `panel-init-sequence`，按 Rockchip 的“包类型、延时、长度、数据”解析命令。字节相似度使用 Python `difflib.SequenceMatcher(autojunk=False)`；它衡量序列接近程度，不是硬件兼容概率。时钟、供电、GPIO、按键、内核和驱动仍需逐项核对；缺少初始化序列的候选显示 `null` 并排在屏幕排序末尾。
+
+#### Linux 使用
+
+在 x86_64 Linux 上赋予所带程序执行权限，然后运行相同脚本：
+
+```bash
+chmod +x tools/bin/linux-x86_64/dtc
+python3 tools/dt_tools.py version
+work_dir=$(mktemp -d)
+python3 tools/dt_tools.py decompile 'R36S/Panel 6/rk3326-r35s-linux.dtb' -o "$work_dir/panel6.dts"
+python3 tools/dt_tools.py compile "$work_dir/panel6.dts" -o "$work_dir/panel6.dtb"
+python3 tools/dt_tools.py compare 'R36S/Panel 6/rk3326-r35s-linux.dtb' "$work_dir/panel6.dtb" --include-metadata
+```
+
+如果系统较旧、所带 Linux 程序缺少运行依赖，或运行在 ARM 掌机上，安装本机架构的 `dtc` 并显式指定：
+
+```bash
+python3 tools/dt_tools.py --dtc /usr/bin/dtc version
+python3 tools/dt_tools.py --dtc /usr/bin/dtc decompile 'R36S/Panel 6/rk3326-r35s-linux.dtb' -o "$work_dir/panel6-system.dts"
+```
+
+全局参数 `--dtc` 必须放在子命令前。Linux x86_64 默认优先选择所带程序；它不可执行时尝试 PATH 中的 `dtc`。其他非 Windows 平台使用 PATH 中的 `dtc`。
+
+不使用 Python 时，也可直接执行原生工具：
+
+```powershell
+.\tools\bin\windows-x86_64\dtc.exe -I dtb -O dts -o "$env:TEMP/panel6-native.dts" 'R36S/Panel 6/rk3326-r35s-linux.dtb'
+.\tools\bin\windows-x86_64\dtc.exe -I dts -O dtb -o "$env:TEMP/panel6-native.dtb" "$env:TEMP/panel6-native.dts"
+```
+
+原生 `dtc` 不提供脚本的旧格式转换、覆盖保护或反编译回编译核对；使用 `dtc` 原始输出格式。
+
+#### 警告、退出码及验证范围
+
+`dtc` 的警告保留在标准错误输出，不统一屏蔽。PowerShell 可在命令末尾添加 `2> "$env:TEMP/dtc-warnings.txt"` 保存。脚本成功退出码为 `0`，编译失败、格式错误、文件冲突或读取失败为 `1`，命令行参数错误通常为 `2`。`compare` / `rank` 成功完成时即返回 `0`，即使发现差异；自动化判断相等请读取 JSON 的 `exact_tree_equal`。
+
+Windows 版已验证版本查询、单文件转换、24 个 DTB 批量反编译、回编译数据一致性、DTS/DTB 对比、候选排序及覆盖保护。Linux 文件已核对 ELF x86_64 文件头和发布包哈希，尚未在 Linux 上执行，也未验证掌机硬件。第三方程序、源码和许可的来源及 SHA-256 见 [manifest.json](../tools/vendor/manifest.json)，对应源码归档随工具存放。
 
 ## 7. 项目流程图
 

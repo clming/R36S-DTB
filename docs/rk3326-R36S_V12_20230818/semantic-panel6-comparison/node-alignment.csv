@@ -1,0 +1,23 @@
+﻿参考路径（统一路径）,Panel 6 原路径,匹配依据
+/bus,/amba,已对齐父节点下唯一相同 compatible；全部参数差异保留
+/bus/dmac@ff240000,/amba/dmac@ff240000,共同符号 dmac；所有驱动/参数差异仍保留
+/clock-controller@ff2bc000,/pmu-clock-controller@ff2bc000,共同符号 pmucru；所有驱动/参数差异仍保留
+/dsi@ff450000/panel@0/display-timings/timing0,/dsi@ff450000/panel@0/display-timings/60Hz,共同符号 timing0；所有驱动/参数差异仍保留
+/hevc@ff440000,/hevc_service@ff440000,共同符号 hevc；所有驱动/参数差异仍保留
+/nvmem@ff290000,/otp@ff290000,共同符号 otp；所有驱动/参数差异仍保留
+/nvmem@ff290000/cpu-leakage@17,/otp@ff290000/cpu-leakage@17,共同符号 cpu_leakage；所有驱动/参数差异仍保留
+/nvmem@ff290000/id@7,/otp@ff290000/id@7,已对齐父节点下的相同子节点名
+/nvmem@ff290000/performance@1e,/otp@ff290000/performance@1e,共同符号 performance；所有驱动/参数差异仍保留
+/phy@ff2e0000,/video-phy@ff2e0000,共同符号 video_phy；所有驱动/参数差异仍保留
+/pinctrl/tsadc/tsadc-otp-pin,/pinctrl/tsadc/tsadc-otp-gpio,共同符号 tsadc_otp_gpio；所有驱动/参数差异仍保留
+/power-management@ff000000/power-controller/power-domain@10,/power-management@ff000000/power-controller/pd_mmc_nand@10,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/power-management@ff000000/power-controller/power-domain@11,/power-management@ff000000/power-controller/pd_vpu@11,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/power-management@ff000000/power-controller/power-domain@12,/power-management@ff000000/power-controller/pd_vo@12,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/power-management@ff000000/power-controller/power-domain@13,/power-management@ff000000/power-controller/pd_vi@13,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/power-management@ff000000/power-controller/power-domain@14,/power-management@ff000000/power-controller/pd_gpu@14,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/power-management@ff000000/power-controller/power-domain@5,/power-management@ff000000/power-controller/pd_usb@5,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/power-management@ff000000/power-controller/power-domain@7,/power-management@ff000000/power-controller/pd_sdcard@7,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/power-management@ff000000/power-controller/power-domain@9,/power-management@ff000000/power-controller/pd_gmac@9,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/reserved-memory/ramoops@110000,/reserved-memory/region@110000,已对齐父节点下唯一相同 reg；compatible 差异仍保留
+/spi@ff3a0000,/sfc@ff3a0000,共同符号 sfc；所有驱动/参数差异仍保留
+/timer@ff210000,/rktimer@ff210000,共同符号 rktimer；所有驱动/参数差异仍保留

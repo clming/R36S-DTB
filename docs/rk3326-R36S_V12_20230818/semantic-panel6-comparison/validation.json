@@ -1,0 +1,26 @@
+{
+  "raw_ordinary_differences": 1598,
+  "aligned_nodes": 427,
+  "renamed_aligned_nodes": 22,
+  "resolved_reference_properties": 497,
+  "resolved_panel6_properties": 472,
+  "reference_resolution_errors": [],
+  "panel6_resolution_errors": [],
+  "matched_node_parameter_differences": 277,
+  "all_parameter_differences_including_one_sided_nodes": 1193,
+  "reference_only_nodes": 119,
+  "panel6_only_nodes": 43,
+  "reference_only_subtrees": 75,
+  "panel6_only_subtrees": 21,
+  "source_sha256": {
+    "docs\\rk3326-R36S_V12_20230818\\rf3536k3ka.dts": "36fc7d85c9c126d31f2913489cfbd68350b4491e03ffdf74cfb5ac36e3a30f26",
+    "R36S\\Panel 6\\rk3326-r35s-linux.dts": "a98fec993d12c7c8ed547099f402615ee4250fc0ea42ccb6ba8ae932ec92aa29"
+  },
+  "normalized_dts_compile_exit_codes": [
+    0,
+    0
+  ],
+  "normalized_dts_roundtrip_equal": true,
+  "reservations_equal": true,
+  "boot_cpu_equal": true
+}

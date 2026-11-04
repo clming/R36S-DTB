@@ -1,0 +1,32 @@
+{
+  "dtc_version": "1.7.2",
+  "upstream": "https://github.com/dgibson/dtc",
+  "binary_source": "https://github.com/mathworks/dtc-build",
+  "windows_release": "https://github.com/mathworks/dtc-build/releases/tag/mathworks_dtcbinaries_win_R27.1.0",
+  "linux_release": "https://github.com/mathworks/dtc-build/releases/tag/mathworks_dtcbinaries_lin_R27.1.0",
+  "source_archive": "https://api.github.com/repos/mathworks/dtc-build/zipball/mathworks_dtcbinaries_win_R27.1.0",
+  "source_commit_prefix": "50e6aa5",
+  "license": "GPL-2.0 (see vendor/DTC-LICENSE.txt and source archive for per-file notices)",
+  "files": [
+    {
+      "path": "bin/windows-x86_64/dtc.exe",
+      "sha256": "daa04200d7f15f266399947b64380cc212dd5eacdf6582e779b2627b09f765b3",
+      "bytes": 874267
+    },
+    {
+      "path": "bin/linux-x86_64/dtc",
+      "sha256": "711deebd7f1d6c0aabef47b568ad299b4e3b700aa39ecef4423449a94b13b9eb",
+      "bytes": 323296
+    },
+    {
+      "path": "vendor/dtc-build-source.zip",
+      "sha256": "41b1160108b0f6cb948e1fb0b1c07bc65311109f78b827cfe5b73f71b92271d6",
+      "bytes": 360033
+    },
+    {
+      "path": "vendor/DTC-LICENSE.txt",
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "bytes": 18092
+    }
+  ]
+}

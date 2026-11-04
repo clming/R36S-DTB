@@ -2,6 +2,8 @@
 
 中文文档：**[项目功能与使用指南](docs/PROJECT_GUIDE.zh-CN.md)**（硬件配置选择、安装、故障排查、DTS 编译及流程图）。
 
+设备树编译、反编译与对比：[tools 工具入口](tools/README.md)。
+
 代理工作与维护规则：[AGENTS.md](AGENTS.md)。项目功能和使用说明独立维护在上述中文指南中。
 
 RetroBox Console / Game Station / Game Console R35S/R36S/R33S + R30S (O30S) with Functional Function (FN) Button
