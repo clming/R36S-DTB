@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-05",
+  "reference": "../zj_boot/rf3536k3ka.dts",
+  "reference_sha256": "17c18042b3e50f1ba281d56129e8f1cf23f1136179ffd36395f922c3bafc5be7",
+  "repo_commit": "cdd88b87c74dca43828a6eda55bc76c98928556e",
+  "recovery": "Refreshed immo2n DTS and #530 main ZIP; other attachments rechecked HTTP 200 and recovered from previously downloaded original archives. Recompiled current reference and all candidates.",
+  "artifacts": [
+    {
+      "file": "issue530-original.dtb",
+      "source_url": "https://github.com/user-attachments/files/33845333/rf3536k3ka.zip",
+      "sha256": "eec8c4a043e7933392c337766d6f76e357cf8e545869802d955c90f0682ff32d"
+    },
+    {
+      "file": "issue530-original.dts",
+      "source_url": "https://github.com/user-attachments/files/33845333/rf3536k3ka.zip",
+      "sha256": "be1e75e0fc091e8c786b78dac0b87c503dcce81b8db3b66e6a138ee391759b4f",
+      "decompiled": true
+    },
+    {
+      "file": "immo2n-rf3536k3ka.dts",
+      "source_url": "https://raw.githubusercontent.com/immo2n/R36S-K36-DTB-PATCH/cdd88b87c74dca43828a6eda55bc76c98928556e/rf3536k3ka.dts",
+      "sha256": "05190f244a658856df55eb0a471849e23babd04d688a3b531a5c88d1c5a3db2a",
+      "decompiled": false
+    },
+    {
+      "file": "issue530-stock-2549.dtb",
+      "source_url": "https://github.com/user-attachments/files/33850662/rf3536k3ka-stock-dtb.zip",
+      "sha256": "b7bb5151de7a8bb278d05158d8a315c3ae54c07014c5850e0fabd7343bb597d2"
+    },
+    {
+      "file": "issue530-stock-2549.dts",
+      "source_url": "https://github.com/user-attachments/files/33850662/rf3536k3ka-stock-dtb.zip",
+      "sha256": "2ab76d584bd0b7a8dd201652cb4f3b4cc34c941e748fcc5728dd7a9864dc9609",
+      "decompiled": true
+    },
+    {
+      "file": "issue372-original.dtb",
+      "source_url": "https://github.com/user-attachments/files/28431858/Console.zip",
+      "sha256": "3090b1efb4e3866fcd091556a1f4bb1ca784e00dbe88d1b2b2da0546c1f36a1f"
+    },
+    {
+      "file": "issue372-original.dts",
+      "source_url": "https://github.com/user-attachments/files/28431858/Console.zip",
+      "sha256": "77238b5809af549ccc77216c4f97592848584c326ea61b19728e8d031854978c",
+      "decompiled": true
+    }
+  ]
+}

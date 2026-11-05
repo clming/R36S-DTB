@@ -1,0 +1,33 @@
+{
+  "source": "D:\\GitHub\\R36S-DTB\\docs\\rk3326-R36S_V12_20230818\\zj_boot\\rf3536k3ka.dts",
+  "source_sha256": "17c18042b3e50f1ba281d56129e8f1cf23f1136179ffd36395f922c3bafc5be7",
+  "compiler": "Version: DTC 1.7.2",
+  "compile_exit_code": 0,
+  "compile_warning_lines": 702,
+  "digital_key_count": 19,
+  "gpio_consumer_entries": 52,
+  "unique_gpio_consumer_pads": 40,
+  "referenced_pinmux_entries": 238,
+  "pinmux_group_count": 138,
+  "pinmux_definition_entries": 326,
+  "gpio_summary_pads": 101,
+  "sheet_rows": {
+    "交付说明": 17,
+    "GPIO接线总表": 101,
+    "GPIO消费明细": 52,
+    "功能键与摇杆": 23,
+    "ADC模拟输入": 7,
+    "已引用Pinmux": 238,
+    "全部Pinmux组": 326,
+    "PMIC专用Pinctrl": 3,
+    "接口与专用信号": 36,
+    "稳压器电源": 17,
+    "IO域供电": 8,
+    "复用与待核实": 12,
+    "来源与验证": 8
+  },
+  "unresolved_phandles": 0,
+  "hardware_verified": false,
+  "ball_numbers_confirmed": false,
+  "all_pad_voltages_confirmed": false
+}

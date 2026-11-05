@@ -1,0 +1,58 @@
+{
+  "checked_date": "2026-11-05",
+  "download_url": "https://github.com/user-attachments/files/28431858/Console.zip",
+  "source_page": "https://github.com/lcdyk0517/arkos4clone/issues/372",
+  "archive_sha256": "9866e65ecbf81b5ea9d5479d0358f49a5f232c2c55984b128557925a26c23ebd",
+  "files": [
+    {
+      "file": "Image",
+      "local_bytes": 30846984,
+      "download_bytes": 30846984,
+      "local_sha256": "c280af82f967f93ad5a2b8a72734b969b7dafcbe162afb41ca6ef84df7a44b5a",
+      "download_sha256": "eb02faa8f4565f7beb4adce2b9a3b1c6e330848b62d7f3941d7c51435f9aff74",
+      "byte_equal": false,
+      "local_linux_banner": "Linux version 5.10.160-g3ee18cae74dc-dirty (pangjianwen@git) (aarch64-libreelec-linux-gnu-gcc-11.3.0 (GCC) 11.3.0, GNU ld (GNU Binutils) 2.39) #1 SMP Fri Jan 23 18:19:18 CST 2026",
+      "download_linux_banner": "Linux version 5.10.160-g0bc6eae0eb0c-dirty (bruce@zed) (aarch64-libreelec-linux-gnu-gcc-11.3.0 (GCC) 11.3.0, GNU ld (GNU Binutils) 2.39) #1 SMP Tue Oct 8 18:11:13 HKT 2024"
+    },
+    {
+      "file": "uInitrd",
+      "local_bytes": 13194771,
+      "download_bytes": 13194771,
+      "local_sha256": "6f72072ff6dcb16f2b3a064a8f0ebd41d98067e87335df2539ec6dfe94047a1a",
+      "download_sha256": "6f72072ff6dcb16f2b3a064a8f0ebd41d98067e87335df2539ec6dfe94047a1a",
+      "byte_equal": true
+    },
+    {
+      "file": "rf3536k3ka.dtb",
+      "local_bytes": 107712,
+      "download_bytes": 107328,
+      "local_sha256": "de0329eaede615231f8d0da5c4fac87babd56de22775c3c41e657681a91ab045",
+      "download_sha256": "3090b1efb4e3866fcd091556a1f4bb1ca784e00dbe88d1b2b2da0546c1f36a1f",
+      "byte_equal": false
+    },
+    {
+      "file": "extlinux/extlinux.conf",
+      "local_bytes": 283,
+      "download_bytes": 283,
+      "local_sha256": "42c79f74d8b49ed9a764ae416a0dfb26ff018a431739e937e122b34fe7888632",
+      "download_sha256": "42c79f74d8b49ed9a764ae416a0dfb26ff018a431739e937e122b34fe7888632",
+      "byte_equal": true
+    },
+    {
+      "file": "logo.bmp",
+      "local_bytes": 127812,
+      "download_bytes": 127812,
+      "local_sha256": "c7da1b8949bf8b384644ba9a88e0b443c518def0ec463b2e27d011449e761da5",
+      "download_sha256": "c7da1b8949bf8b384644ba9a88e0b443c518def0ec463b2e27d011449e761da5",
+      "byte_equal": true
+    },
+    {
+      "file": "logo_kernel.bmp",
+      "local_bytes": 127812,
+      "download_bytes": 127812,
+      "local_sha256": "c7da1b8949bf8b384644ba9a88e0b443c518def0ec463b2e27d011449e761da5",
+      "download_sha256": "c7da1b8949bf8b384644ba9a88e0b443c518def0ec463b2e27d011449e761da5",
+      "byte_equal": true
+    }
+  ]
+}

@@ -5,6 +5,7 @@
 | 文件 | 用途 |
 | --- | --- |
 | `dt_tools.py` | Python 3.6+ 命令行入口，仅使用标准库 |
+| `export_schematic_gpio.py` | 从指定 DTS 导出原理图审查用 GPIO/Pinmux/ADC/电源 Excel，需要 `openpyxl`；见[指南第 6.7 节](../docs/PROJECT_GUIDE.zh-CN.md#67-从-dts-导出原理图用-gpio-表) |
 | `bin/windows-x86_64/dtc.exe` | Windows x64 的 DTC 1.7.2 |
 | `bin/linux-x86_64/dtc` | Linux x86_64 的 DTC 1.7.2，首次使用需赋执行权限 |
 | `vendor/manifest.json` | 下载来源、版本、源码归档地址和本地文件 SHA-256 |

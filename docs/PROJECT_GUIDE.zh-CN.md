@@ -387,6 +387,21 @@ python3 tools/dt_tools.py --dtc /usr/bin/dtc decompile 'R36S/Panel 6/rk3326-r35s
 
 Windows 版已验证版本查询、单文件转换、24 个 DTB 批量反编译、回编译数据一致性、DTS/DTB 对比、候选排序及覆盖保护。Linux 文件已核对 ELF x86_64 文件头和发布包哈希，尚未在 Linux 上执行，也未验证掌机硬件。第三方程序、源码和许可的来源及 SHA-256 见 [manifest.json](../tools/vendor/manifest.json)，对应源码归档随工具存放。
 
+### 6.7 从 DTS 导出原理图用 GPIO 表
+
+脚本：[export_schematic_gpio.py](../tools/export_schematic_gpio.py)。使用 Python 3.6+，并在该解释器环境中安装 `openpyxl`。Windows 自动使用仓库 DTC；其他平台可用 `--dtc` 指定程序。
+
+```powershell
+$python = 'D:\python3.6.8\python.exe'
+& $python tools/export_schematic_gpio.py 'docs/rk3326-R36S_V12_20230818/zj_boot/rf3536k3ka.dts' --output-dir "$env:TEMP/rf3536k3ka-schematic-gpio"
+```
+
+输出目录必须是新目录，脚本拒绝覆盖已有报告。输出包含 Excel、源文件 SHA-256 与统计 JSON，以及原样保留的 DTC 编译警告。工作簿覆盖 GPIO 属性、中断、默认/其他状态 pinctrl、全部 pinmux 库、ADC 输入、外围接口、稳压器和 I/O 域供电。
+
+本次已生成的 [核心板 GPIO 交付表及说明](rk3326-R36S_V12_20230818/核心板GPIO_20261105/README.md)，唯一板级来源为 `zj_boot/rf3536k3ka.dts`。它记录 52 条 GPIO/中断声明、40 个不同 GPIO，以及结合被引用 pinctrl 状态的 101 个逻辑引脚；这些计数不表示所有引脚都在运行时同时启用。
+
+供原理图设计使用时，先筛选默认可用候选并审查复用，再补齐芯片精确封装球位、VCCIO 映射、实体键名、连接器脚位和硬件签核。DTS 无法提供的参数留待核实，不套用其他机型图纸。DDR、DSI、USB 等专用信号仍需按实际芯片/外设设计资料完成。
+
 ## 7. 项目流程图
 
 ### 7.1 本仓库 boot.ini 所示启动流程

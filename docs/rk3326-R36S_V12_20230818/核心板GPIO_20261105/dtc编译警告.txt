@@ -1,0 +1,702 @@
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4416.21-4420.5: Warning (unit_address_format): /reserved-memory/drm-logo@00000000: unit name should not have leading 0s
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1199.18-1238.4: Warning (avoid_unnecessary_addr_size): /syscon@ff010000: unnecessary #address-cells/#size-cells without "ranges", "dma-ranges" or child "reg" property
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1338.18-1409.4: Warning (avoid_unnecessary_addr_size): /syscon@ff140000: unnecessary #address-cells/#size-cells without "ranges", "dma-ranges" or child "reg" property
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1411.18-1431.4: Warning (avoid_unnecessary_addr_size): /syscon@ff148000: unnecessary #address-cells/#size-cells without "ranges", "dma-ranges" or child "reg" property
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1303.18-1313.4: Warning (unique_unit_address): /crypto@ff0b0000: duplicate unit-address (also used in node /rng@ff0b0000)
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2882.15-2896.4: Warning (unique_unit_address): /cif@ff490000: duplicate unit-address (also used in node /cif-new@ff490000)
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2936.18-2958.4: Warning (unique_unit_address): /rk_isp@ff4a0000: duplicate unit-address (also used in node /rkisp1@ff4a0000)
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:585.4-25: Warning (clocks_property): /cpus/cpu@0:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:599.4-25: Warning (clocks_property): /cpus/cpu@1:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:612.4-25: Warning (clocks_property): /cpus/cpu@2:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:625.4-25: Warning (clocks_property): /cpus/cpu@3:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:665.3-24: Warning (clocks_property): /cpu0-opp-table:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:929.3-24: Warning (clocks_property): /bus-apll:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1151.5-48: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@5:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1151.5-48: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@5:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1151.5-48: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@5:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1157.5-36: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@7:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1157.5-36: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@7:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1163.5-57: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@9:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1163.5-57: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@9:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1163.5-57: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@9:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1163.5-57: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@9:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1169.5-98: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@10:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1169.5-98: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@10:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1169.5-98: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@10:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1169.5-98: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@10:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1169.5-98: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@10:clocks: cell 8 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1169.5-98: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@10:clocks: cell 10 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1169.5-98: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@10:clocks: cell 12 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1169.5-98: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@10:clocks: cell 14 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1175.5-46: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@11:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1175.5-46: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@11:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1175.5-46: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@11:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 8 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 10 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 12 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 14 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 16 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 18 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1181.5-127: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@12:clocks: cell 20 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1187.5-66: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@13:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1187.5-66: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@13:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1187.5-66: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@13:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1187.5-66: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@13:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1187.5-66: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@13:clocks: cell 8 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1193.5-26: Warning (clocks_property): /power-management@ff000000/power-controller/power-domain@14:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1234.5-26: Warning (clocks_property): /syscon@ff010000/pmu-pvtm/pvtm@1:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1244.3-34: Warning (clocks_property): /serial@ff030000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1244.3-34: Warning (clocks_property): /serial@ff030000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1259.3-45: Warning (clocks_property): /i2s@ff060000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1259.3-45: Warning (clocks_property): /i2s@ff060000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1259.3-45: Warning (clocks_property): /i2s@ff060000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1277.3-35: Warning (clocks_property): /i2s@ff070000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1277.3-35: Warning (clocks_property): /i2s@ff070000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1292.3-35: Warning (clocks_property): /i2s@ff080000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1292.3-35: Warning (clocks_property): /i2s@ff080000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1307.3-54: Warning (clocks_property): /crypto@ff0b0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1307.3-54: Warning (clocks_property): /crypto@ff0b0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1307.3-54: Warning (clocks_property): /crypto@ff0b0000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1307.3-54: Warning (clocks_property): /crypto@ff0b0000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1318.3-54: Warning (clocks_property): /rng@ff0b0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1318.3-54: Warning (clocks_property): /rng@ff0b0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1318.3-54: Warning (clocks_property): /rng@ff0b0000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1318.3-54: Warning (clocks_property): /rng@ff0b0000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1427.5-26: Warning (clocks_property): /syscon@ff148000/pvtm/pvtm@0:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1437.3-35: Warning (clocks_property): /serial@ff158000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1437.3-35: Warning (clocks_property): /serial@ff158000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1452.3-35: Warning (clocks_property): /serial@ff160000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1452.3-35: Warning (clocks_property): /serial@ff160000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1467.3-35: Warning (clocks_property): /serial@ff168000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1467.3-35: Warning (clocks_property): /serial@ff168000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1482.3-35: Warning (clocks_property): /serial@ff170000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1482.3-35: Warning (clocks_property): /serial@ff170000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1497.3-35: Warning (clocks_property): /serial@ff178000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1497.3-35: Warning (clocks_property): /serial@ff178000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1511.3-35: Warning (clocks_property): /i2c@ff180000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1511.3-35: Warning (clocks_property): /i2c@ff180000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1855.5-26: Warning (clocks_property): /i2c@ff180000/pmic@20/codec:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1870.3-35: Warning (clocks_property): /i2c@ff190000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1870.3-35: Warning (clocks_property): /i2c@ff190000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1927.3-35: Warning (clocks_property): /i2c@ff1a0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1927.3-35: Warning (clocks_property): /i2c@ff1a0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1945.4-25: Warning (clocks_property): /i2c@ff1a0000/gc2155@3c:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1965.4-25: Warning (clocks_property): /i2c@ff1a0000/ov5695@36:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1991.3-35: Warning (clocks_property): /i2c@ff1b0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1991.3-35: Warning (clocks_property): /i2c@ff1b0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2006.3-35: Warning (clocks_property): /spi@ff1d0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2006.3-35: Warning (clocks_property): /spi@ff1d0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2022.3-35: Warning (clocks_property): /spi@ff1d8000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2022.3-35: Warning (clocks_property): /spi@ff1d8000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2037.3-25: Warning (clocks_property): /watchdog@ff1e0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2046.3-35: Warning (clocks_property): /pwm@ff200000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2046.3-35: Warning (clocks_property): /pwm@ff200000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2058.3-35: Warning (clocks_property): /pwm@ff200010:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2058.3-35: Warning (clocks_property): /pwm@ff200010:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2070.3-35: Warning (clocks_property): /pwm@ff200020:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2070.3-35: Warning (clocks_property): /pwm@ff200020:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2082.3-35: Warning (clocks_property): /pwm@ff200030:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2082.3-35: Warning (clocks_property): /pwm@ff200030:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2094.3-35: Warning (clocks_property): /pwm@ff208000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2094.3-35: Warning (clocks_property): /pwm@ff208000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2106.3-35: Warning (clocks_property): /pwm@ff208010:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2106.3-35: Warning (clocks_property): /pwm@ff208010:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2118.3-35: Warning (clocks_property): /pwm@ff208020:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2118.3-35: Warning (clocks_property): /pwm@ff208020:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2130.3-35: Warning (clocks_property): /pwm@ff208030:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2130.3-35: Warning (clocks_property): /pwm@ff208030:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2143.3-35: Warning (clocks_property): /timer@ff210000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2143.3-35: Warning (clocks_property): /timer@ff210000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2160.4-25: Warning (clocks_property): /bus/dmac@ff240000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2173.3-35: Warning (clocks_property): /tsadc@ff280000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2173.3-35: Warning (clocks_property): /tsadc@ff280000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2193.3-35: Warning (clocks_property): /saradc@ff288000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2193.3-35: Warning (clocks_property): /saradc@ff288000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2205.3-46: Warning (clocks_property): /nvmem@ff290000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2205.3-46: Warning (clocks_property): /nvmem@ff290000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2205.3-46: Warning (clocks_property): /nvmem@ff290000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2262.4-25: Warning (clocks_property): /syscon@ff2c0000/usb2-phy@100:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2293.3-46: Warning (clocks_property): /phy@ff2e0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2293.3-46: Warning (clocks_property): /phy@ff2e0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2293.3-46: Warning (clocks_property): /phy@ff2e0000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2306.3-25: Warning (clocks_property): /mipi-dphy-rx0@ff2f0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2348.3-25: Warning (clocks_property): /usb@ff300000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2365.3-30: Warning (clocks_property): /usb@ff340000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2365.3-30: Warning (clocks_property): /usb@ff340000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2378.3-30: Warning (clocks_property): /usb@ff350000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2378.3-30: Warning (clocks_property): /usb@ff350000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2392.3-95: Warning (clocks_property): /ethernet@ff360000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2392.3-95: Warning (clocks_property): /ethernet@ff360000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2392.3-95: Warning (clocks_property): /ethernet@ff360000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2392.3-95: Warning (clocks_property): /ethernet@ff360000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2392.3-95: Warning (clocks_property): /ethernet@ff360000:clocks: cell 8 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2392.3-95: Warning (clocks_property): /ethernet@ff360000:clocks: cell 10 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2392.3-95: Warning (clocks_property): /ethernet@ff360000:clocks: cell 12 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2392.3-95: Warning (clocks_property): /ethernet@ff360000:clocks: cell 14 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2409.3-54: Warning (clocks_property): /dwmmc@ff370000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2409.3-54: Warning (clocks_property): /dwmmc@ff370000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2409.3-54: Warning (clocks_property): /dwmmc@ff370000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2409.3-54: Warning (clocks_property): /dwmmc@ff370000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2436.3-54: Warning (clocks_property): /dwmmc@ff380000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2436.3-54: Warning (clocks_property): /dwmmc@ff380000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2436.3-54: Warning (clocks_property): /dwmmc@ff380000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2436.3-54: Warning (clocks_property): /dwmmc@ff380000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2463.3-55: Warning (clocks_property): /dwmmc@ff390000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2463.3-55: Warning (clocks_property): /dwmmc@ff390000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2463.3-55: Warning (clocks_property): /dwmmc@ff390000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2463.3-55: Warning (clocks_property): /dwmmc@ff390000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2485.3-35: Warning (clocks_property): /spi@ff3a0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2485.3-35: Warning (clocks_property): /spi@ff3a0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2498.3-34: Warning (clocks_property): /nandc@ff3b0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2498.3-34: Warning (clocks_property): /nandc@ff3b0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2512.3-24: Warning (clocks_property): /gpu@ff400000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2639.3-34: Warning (clocks_property): /vdpu@ff442400:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2639.3-34: Warning (clocks_property): /vdpu@ff442400:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2657.3-34: Warning (clocks_property): /iommu@ff442800:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2657.3-34: Warning (clocks_property): /iommu@ff442800:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2671.3-34: Warning (clocks_property): /vepu@ff442000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2671.3-34: Warning (clocks_property): /vepu@ff442000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2689.3-44: Warning (clocks_property): /hevc@ff440000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2689.3-44: Warning (clocks_property): /hevc@ff440000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2689.3-44: Warning (clocks_property): /hevc@ff440000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2707.3-34: Warning (clocks_property): /iommu@ff440440:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2707.3-34: Warning (clocks_property): /iommu@ff440440:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2720.3-25: Warning (clocks_property): /dsi@ff450000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2823.3-44: Warning (clocks_property): /vop@ff460000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2823.3-44: Warning (clocks_property): /vop@ff460000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2823.3-44: Warning (clocks_property): /vop@ff460000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2862.3-34: Warning (clocks_property): /iommu@ff460f00:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2862.3-34: Warning (clocks_property): /iommu@ff460f00:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2875.3-44: Warning (clocks_property): /rk_rga@ff480000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2875.3-44: Warning (clocks_property): /rk_rga@ff480000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2875.3-44: Warning (clocks_property): /rk_rga@ff480000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2886.3-55: Warning (clocks_property): /cif@ff490000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2886.3-55: Warning (clocks_property): /cif@ff490000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2886.3-55: Warning (clocks_property): /cif@ff490000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2886.3-55: Warning (clocks_property): /cif@ff490000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2902.3-55: Warning (clocks_property): /cif-new@ff490000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2902.3-55: Warning (clocks_property): /cif-new@ff490000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2902.3-55: Warning (clocks_property): /cif-new@ff490000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2902.3-55: Warning (clocks_property): /cif-new@ff490000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2927.3-34: Warning (clocks_property): /iommu@ff490800:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2927.3-34: Warning (clocks_property): /iommu@ff490800:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2940.3-96: Warning (clocks_property): /rk_isp@ff4a0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2940.3-96: Warning (clocks_property): /rk_isp@ff4a0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2940.3-96: Warning (clocks_property): /rk_isp@ff4a0000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2940.3-96: Warning (clocks_property): /rk_isp@ff4a0000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2940.3-96: Warning (clocks_property): /rk_isp@ff4a0000:clocks: cell 8 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2940.3-96: Warning (clocks_property): /rk_isp@ff4a0000:clocks: cell 10 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2940.3-96: Warning (clocks_property): /rk_isp@ff4a0000:clocks: cell 12 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2940.3-96: Warning (clocks_property): /rk_isp@ff4a0000:clocks: cell 14 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2965.3-55: Warning (clocks_property): /rkisp1@ff4a0000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2965.3-55: Warning (clocks_property): /rkisp1@ff4a0000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2965.3-55: Warning (clocks_property): /rkisp1@ff4a0000:clocks: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2965.3-55: Warning (clocks_property): /rkisp1@ff4a0000:clocks: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2991.3-34: Warning (clocks_property): /iommu@ff4a8000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2991.3-34: Warning (clocks_property): /iommu@ff4a8000:clocks: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:3133.3-24: Warning (clocks_property): /dmc:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:3301.4-25: Warning (clocks_property): /pinctrl/gpio0@ff040000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:3313.4-26: Warning (clocks_property): /pinctrl/gpio1@ff250000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:3325.4-26: Warning (clocks_property): /pinctrl/gpio2@ff260000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:3337.4-26: Warning (clocks_property): /pinctrl/gpio3@ff270000:clocks: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1095.6-52: Warning (cooling_device_property): /thermal-zones/soc-thermal/cooling-maps/map0:cooling-device: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1101.6-52: Warning (cooling_device_property): /thermal-zones/soc-thermal/cooling-maps/map1:cooling-device: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1246.3-32: Warning (dmas_property): /serial@ff030000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1246.3-32: Warning (dmas_property): /serial@ff030000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1261.3-32: Warning (dmas_property): /i2s@ff060000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1261.3-32: Warning (dmas_property): /i2s@ff060000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1279.3-32: Warning (dmas_property): /i2s@ff070000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1279.3-32: Warning (dmas_property): /i2s@ff070000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1294.3-32: Warning (dmas_property): /i2s@ff080000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1294.3-32: Warning (dmas_property): /i2s@ff080000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1439.3-32: Warning (dmas_property): /serial@ff158000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1439.3-32: Warning (dmas_property): /serial@ff158000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1454.3-32: Warning (dmas_property): /serial@ff160000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1454.3-32: Warning (dmas_property): /serial@ff160000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1469.3-32: Warning (dmas_property): /serial@ff168000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1469.3-32: Warning (dmas_property): /serial@ff168000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1484.3-32: Warning (dmas_property): /serial@ff170000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1484.3-32: Warning (dmas_property): /serial@ff170000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1499.3-32: Warning (dmas_property): /serial@ff178000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1499.3-32: Warning (dmas_property): /serial@ff178000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2008.3-32: Warning (dmas_property): /spi@ff1d0000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2008.3-32: Warning (dmas_property): /spi@ff1d0000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2024.3-32: Warning (dmas_property): /spi@ff1d8000:dmas: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2024.3-32: Warning (dmas_property): /spi@ff1d8000:dmas: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4435.3-29: Warning (io_channels_property): /adc-keys:io-channels: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4456.3-59: Warning (io_channels_property): /play_joystick:io-channels: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4456.3-59: Warning (io_channels_property): /play_joystick:io-channels: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4456.3-59: Warning (io_channels_property): /play_joystick:io-channels: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4456.3-59: Warning (io_channels_property): /play_joystick:io-channels: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4523.3-29: Warning (io_channels_property): /rk817-sound:io-channels: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2643.3-19: Warning (iommus_property): /vdpu@ff442400:iommus: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2675.3-19: Warning (iommus_property): /vepu@ff442000:iommus: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2693.3-19: Warning (iommus_property): /hevc@ff440000:iommus: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2827.3-19: Warning (iommus_property): /vop@ff460000:iommus: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2893.3-19: Warning (iommus_property): /cif@ff490000:iommus: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2907.3-19: Warning (iommus_property): /cif-new@ff490000:iommus: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2955.3-19: Warning (iommus_property): /rk_isp@ff4a0000:iommus: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2969.3-19: Warning (iommus_property): /rkisp1@ff4a0000:iommus: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1359.4-18: Warning (phys_property): /syscon@ff140000/lvds:phys: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1388.4-18: Warning (phys_property): /syscon@ff140000/rgb:phys: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2354.3-17: Warning (phys_property): /usb@ff300000:phys: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2367.3-17: Warning (phys_property): /usb@ff340000:phys: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2380.3-17: Warning (phys_property): /usb@ff350000:phys: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2722.3-17: Warning (phys_property): /dsi@ff450000:phys: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2298.3-31: Warning (power_domains_property): /phy@ff2e0000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2308.3-31: Warning (power_domains_property): /mipi-dphy-rx0@ff2f0000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2356.3-31: Warning (power_domains_property): /usb@ff300000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2369.3-31: Warning (power_domains_property): /usb@ff340000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2382.3-31: Warning (power_domains_property): /usb@ff350000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2398.3-31: Warning (power_domains_property): /ethernet@ff360000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2416.3-31: Warning (power_domains_property): /dwmmc@ff370000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2443.3-31: Warning (power_domains_property): /dwmmc@ff380000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2470.3-31: Warning (power_domains_property): /dwmmc@ff390000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2502.3-31: Warning (power_domains_property): /nandc@ff3b0000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2514.3-31: Warning (power_domains_property): /gpu@ff400000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2644.3-31: Warning (power_domains_property): /vdpu@ff442400:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2659.3-31: Warning (power_domains_property): /iommu@ff442800:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2676.3-31: Warning (power_domains_property): /vepu@ff442000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2697.3-31: Warning (power_domains_property): /hevc@ff440000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2709.3-31: Warning (power_domains_property): /iommu@ff440440:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2724.3-31: Warning (power_domains_property): /dsi@ff450000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2828.3-31: Warning (power_domains_property): /vop@ff460000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2864.3-31: Warning (power_domains_property): /iommu@ff460f00:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2877.3-31: Warning (power_domains_property): /rk_rga@ff480000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2890.3-31: Warning (power_domains_property): /cif@ff490000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2906.3-31: Warning (power_domains_property): /cif-new@ff490000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2929.3-31: Warning (power_domains_property): /iommu@ff490800:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2944.3-31: Warning (power_domains_property): /rk_isp@ff4a0000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2968.3-31: Warning (power_domains_property): /rkisp1@ff4a0000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2993.3-31: Warning (power_domains_property): /iommu@ff4a8000:power-domains: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4501.3-34: Warning (pwms_property): /backlight:pwms: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1263.3-34: Warning (resets_property): /i2s@ff060000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1263.3-34: Warning (resets_property): /i2s@ff060000:resets: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1309.3-24: Warning (resets_property): /crypto@ff0b0000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1322.3-24: Warning (resets_property): /rng@ff0b0000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2175.3-24: Warning (resets_property): /tsadc@ff280000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2195.3-24: Warning (resets_property): /saradc@ff288000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2207.3-24: Warning (resets_property): /nvmem@ff290000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2295.3-24: Warning (resets_property): /phy@ff2e0000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2399.3-24: Warning (resets_property): /ethernet@ff360000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2641.3-34: Warning (resets_property): /vdpu@ff442400:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2641.3-34: Warning (resets_property): /vdpu@ff442400:resets: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2673.3-34: Warning (resets_property): /vepu@ff442000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2673.3-34: Warning (resets_property): /vepu@ff442000:resets: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2691.3-64: Warning (resets_property): /hevc@ff440000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2691.3-64: Warning (resets_property): /hevc@ff440000:resets: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2691.3-64: Warning (resets_property): /hevc@ff440000:resets: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2691.3-64: Warning (resets_property): /hevc@ff440000:resets: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2691.3-64: Warning (resets_property): /hevc@ff440000:resets: cell 8 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2725.3-24: Warning (resets_property): /dsi@ff450000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2825.3-44: Warning (resets_property): /vop@ff460000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2825.3-44: Warning (resets_property): /vop@ff460000:resets: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2825.3-44: Warning (resets_property): /vop@ff460000:resets: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2888.3-44: Warning (resets_property): /cif@ff490000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2888.3-44: Warning (resets_property): /cif@ff490000:resets: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2888.3-44: Warning (resets_property): /cif@ff490000:resets: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2904.3-44: Warning (resets_property): /cif-new@ff490000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2904.3-44: Warning (resets_property): /cif-new@ff490000:resets: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2904.3-44: Warning (resets_property): /cif-new@ff490000:resets: cell 4 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2942.3-34: Warning (resets_property): /rk_isp@ff4a0000:resets: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2942.3-34: Warning (resets_property): /rk_isp@ff4a0000:resets: cell 2 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1064.4-34: Warning (thermal_sensors_property): /thermal-zones/soc-thermal:thermal-sensors: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1110.4-34: Warning (thermal_sensors_property): /thermal-zones/gpu-thermal:thermal-sensors: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1899.4-32: Warning (gpios_property): /i2c@ff190000/sensor@4c:irq-gpio: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1909.4-34: Warning (gpios_property): /i2c@ff190000/ts@40:touch-gpio: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1910.4-33: Warning (gpios_property): /i2c@ff190000/ts@40:wake-gpio: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1918.4-32: Warning (gpios_property): /i2c@ff190000/fb_keros@1c:led-gpio: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1950.4-34: Warning (gpios_property): /i2c@ff1a0000/gc2155@3c:pwdn-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1970.4-34: Warning (gpios_property): /i2c@ff1a0000/ov5695@36:pwdn-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2422.3-31: Warning (gpios_property): /dwmmc@ff370000:cd-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2449.3-31: Warning (gpios_property): /dwmmc@ff380000:cd-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2778.4-35: Warning (gpios_property): /dsi@ff450000/panel@0:reset-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4463.3-31: Warning (gpios_property): /play_joystick:otg-gpio: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4464.3-36: Warning (gpios_property): /play_joystick:rocker0-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4465.3-35: Warning (gpios_property): /play_joystick:rocker-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4466.3-36: Warning (gpios_property): /play_joystick:rocker1-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 3 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 6 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 9 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 12 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 15 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 18 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 21 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 24 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 27 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 30 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 33 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 36 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 39 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 42 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 45 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 48 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 51 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4468.3-302: Warning (gpios_property): /play_joystick:key-gpios: cell 54 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4521.3-35: Warning (gpios_property): /rk817-sound:spk-con-gpio: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4522.3-34: Warning (gpios_property): /rk817-sound:hp-det-gpio: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:4582.3-27: Warning (gpios_property): /vcc18-lcd-n:gpio: cell 0 is not a phandle reference
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1364.10-1379.6: Warning (graph_child_address): /syscon@ff140000/lvds/ports: graph node has single child node 'port@0', #address-cells/#size-cells are not necessary
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1368.12-1378.7: Warning (graph_child_address): /syscon@ff140000/lvds/ports/port@0: graph node has single child node 'endpoint@0', #address-cells/#size-cells are not necessary
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1392.10-1407.6: Warning (graph_child_address): /syscon@ff140000/rgb/ports: graph node has single child node 'port@0', #address-cells/#size-cells are not necessary
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:1396.12-1406.7: Warning (graph_child_address): /syscon@ff140000/rgb/ports/port@0: graph node has single child node 'endpoint@0', #address-cells/#size-cells are not necessary
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2330.11-2340.6: Warning (graph_child_address): /mipi-dphy-rx0@ff2f0000/ports/port@1: graph node has single child node 'endpoint@0', #address-cells/#size-cells are not necessary
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2737.11-2748.6: Warning (graph_child_address): /dsi@ff450000/ports/port@0: graph node has single child node 'endpoint@0', #address-cells/#size-cells are not necessary
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2801.10-2813.6: Warning (graph_child_address): /dsi@ff450000/panel@0/ports: graph node has single child node 'port@0', #address-cells/#size-cells are not necessary
+
+D:\GitHub\R36S-DTB\docs\rk3326-R36S_V12_20230818\zj_boot\rf3536k3ka.dts:2974.8-2983.5: Warning (graph_child_address): /rkisp1@ff4a0000/port: graph node has single child node 'endpoint@0', #address-cells/#size-cells are not necessary
+
